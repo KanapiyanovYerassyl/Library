@@ -22,7 +22,13 @@
                 <button id="add-book-button">Add book +</button>
             </div>
             <div class="books">
-        
+                <div class="book">
+                    <p>"Elden Ring"</p>
+                    <p>Steven Hawking</p>
+                    <p>2 pages</p>
+                    <button class="read-book">Not Read</button>
+                    <button id="remove-book">Remove</button>
+                </div>
             </div>
         </div>
     </section>
@@ -31,5 +37,35 @@
     <footer class="footer">
         <h4>Copyright @ <span>2026</span> KanapiyanovYerassyl</h4>
     </footer>
+
+
+    <dialog id="add-book-dialog">
+        <form id="dialog-form" method="dialog">
+            <div class="input">
+                <label for="title">Title: </label>
+                <input autofocus type="text" name="title" id="title" required />
+            </div>
+
+            <div class="input">
+                <label for="author">Author: </label>
+                <input type="text" name="author" id="author" required />
+            </div>
+
+            <div class="input">
+                <label for="pages">Number of pages: </label>
+                <input type="number" name="pages" id="pages" required />
+            </div>
+
+            <div class="input-checkbox">
+                <label for="read">Have you read it?</label>
+                <input type="checkbox" name="read" id="read">
+            </div>
+            
+            <menu>
+                <button id="cancel" type="reset">Cancel</button>
+                <button id="submit" type="submit">Confirm</button>
+            </menu>
+        </form>
+    </dialog>
 </body>
 </html>

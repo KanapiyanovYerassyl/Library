@@ -86,7 +86,7 @@ button {
     padding: 20px;
 }
 
-.main-body > div:nth-of-type(1) {
+.main-body-wrapper > div:nth-of-type(1) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,3 +103,59 @@ button {
     align-items: center;
     box-shadow: 0 0 5px  #858181;
 }
+
+.main-body-wrapper > .books {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(200px, 300px));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    margin:16px;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #FFC570;
+}
+
+#add-book-dialog {
+    border-radius: 12px;
+    font-size: 1.3em;
+}
+
+
+
+
+form > .input {
+    display: flex;
+    flex-direction: column;
+}
+
+form > .input-checkbox {
+    display: flex;
+    justify-content: space-evenly;
+    padding-block: 32px;
+    
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+input[type=text], select {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+
+.book {
+    
+    background-color: #D9CFC7;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 500;
+}
+
