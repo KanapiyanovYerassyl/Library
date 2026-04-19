@@ -52,6 +52,8 @@ function updateBooks(){
 
 function createBookCard(book) {
     const div = document.createElement("div");
+    div.dataset.id = book.id;
+
     const pTitle = document.createElement("p");
     pTitle.textContent = '"' + book.title + '"';
     
@@ -62,7 +64,7 @@ function createBookCard(book) {
     pPages.textContent = book.pages;
 
     const buttonRead = document.createElement("button");
-    // if read then read if not ,not read
+    buttonRead.classList.add("read-button")
     if(book.read === "on"){
         buttonRead.textContent = "Read";
     }else {
@@ -70,8 +72,10 @@ function createBookCard(book) {
     }
 
     const buttonRemove = document.createElement("button");
+    buttonRemove.classList.add("remove-button");
     buttonRemove.textContent = "Remove";
 
+    
 
     div.classList.add("book")
     buttonRead.classList.add("read-book");
@@ -83,7 +87,19 @@ function createBookCard(book) {
     div.appendChild(buttonRead);
     div.appendChild(buttonRemove);
     booksView.appendChild(div);
+
+    div.addEventListener("click", (event) => {
+    if (event.target.matches(".read-button")) {
+        const btn = event.target;
+        btn.textContent = btn.textContent === "Read" ? "Not Read" : "Read";
+    }else if(event.target.matches(".remove-button")){
+        div.remove();
+        created = created.filter(book => book.id !== div.dataset.id);
+    }
+});
 }
+
+
 
 
 form.addEventListener("submit", function(e){
@@ -98,4 +114,8 @@ form.addEventListener("submit", function(e){
     book.addBookToLibrary();
     form.reset();
     dialog.close();
-})
+});
+
+
+
+
